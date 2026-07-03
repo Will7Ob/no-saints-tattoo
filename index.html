@@ -1,0 +1,324 @@
+<!-- NO SAINTS TATTOO - PAGE ACCUEIL -->
+
+<style>
+:root {
+  --bg:#050505;
+  --bg2:#0d0b08;
+  --gold:#c9a45c;
+  --gold2:#8f6a2c;
+  --white:#f4f1ea;
+  --muted:#b8aa91;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+}
+
+.no-saints-page {
+  background:
+    radial-gradient(circle at top, rgba(201,164,92,.12), transparent 35%),
+    linear-gradient(180deg, #050505 0%, #0b0906 100%);
+  color:var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow:hidden;
+}
+
+/* NAV */
+.ns-nav {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(5,5,5,.95);
+  border-bottom:1px solid var(--gold);
+  overflow-x:auto;
+  white-space:nowrap;
+  box-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+
+.ns-nav a {
+  display:inline-block;
+  padding:15px 18px;
+  color:var(--white);
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:13px;
+  letter-spacing:.8px;
+  border-right:1px solid rgba(201,164,92,.18);
+}
+
+.ns-nav a:hover {
+  background:var(--gold);
+  color:#050505;
+}
+
+/* HERO */
+.ns-hero {
+  min-height:78vh;
+  padding:70px 20px 90px;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.85)),
+    url("https://upload.storylife.fr/i/01KWKK6G9DMX76J161HTS8RVPY.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.ns-hero-inner {
+  max-width:950px;
+}
+
+.ns-logo {
+  max-width:360px;
+  width:75%;
+  margin-bottom:25px;
+  filter:drop-shadow(0 0 25px rgba(201,164,92,.28));
+}
+
+.ns-hero h1 {
+  margin:0;
+  font-size:clamp(36px, 7vw, 82px);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--white);
+  text-shadow:0 3px 0 #000;
+}
+
+.ns-hero p {
+  max-width:720px;
+  margin:22px auto 32px;
+  font-size:clamp(16px, 2vw, 21px);
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.ns-buttons {
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.ns-btn {
+  padding:14px 24px;
+  border:1px solid var(--gold);
+  color:var(--white);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:13px;
+  background:rgba(0,0,0,.55);
+  transition:.25s;
+}
+
+.ns-btn.gold {
+  background:var(--gold);
+  color:#050505;
+  font-weight:bold;
+}
+
+.ns-btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(201,164,92,.35);
+}
+
+/* SECTIONS */
+.ns-section {
+  padding:70px 20px;
+  max-width:1180px;
+  margin:auto;
+}
+
+.ns-title {
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.ns-title h2 {
+  margin:0;
+  font-size:clamp(28px, 4vw, 46px);
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.ns-title span {
+  display:block;
+  margin-top:12px;
+  color:var(--gold);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+/* CARDS */
+.ns-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.ns-card {
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border:1px solid rgba(201,164,92,.35);
+  padding:28px;
+  min-height:210px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.ns-card h3 {
+  color:var(--gold);
+  margin:0 0 14px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.ns-card p {
+  color:var(--muted);
+  line-height:1.6;
+  margin:0;
+}
+
+/* ABOUT */
+.ns-about {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.ns-about img {
+  width:100%;
+  max-width:430px;
+  margin:auto;
+  display:block;
+}
+
+.ns-about-text p {
+  color:var(--muted);
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* CTA */
+.ns-cta {
+  text-align:center;
+  padding:80px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.88)),
+    url("https://upload.storylife.fr/i/01KWKK6G9DMX76J161HTS8RVPY.png") center/cover no-repeat;
+  border-top:1px solid rgba(201,164,92,.4);
+  border-bottom:1px solid rgba(201,164,92,.4);
+}
+
+.ns-cta h2 {
+  font-size:clamp(30px, 5vw, 56px);
+  margin:0 0 18px;
+  text-transform:uppercase;
+}
+
+.ns-cta p {
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 30px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+.ns-footer {
+  padding:35px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  background:#030303;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px) {
+  .ns-grid {
+    grid-template-columns:1fr;
+  }
+
+  .ns-about {
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .ns-nav a {
+    font-size:12px;
+    padding:13px 14px;
+  }
+
+  .ns-hero {
+    min-height:70vh;
+    padding:55px 18px;
+  }
+}
+</style>
+
+<div class="no-saints-page">
+
+  <nav class="ns-nav">
+    <a href="/">Accueil</a>
+    <a href="#visage">Visage / Cou / Nuque</a>
+    <a href="file:///D:/Images/RAVENS%20MC/NOSAINTSTATTOO/brasgauche.html">Bras Gauche</a>
+    <a href="#bras-droit">Bras Droit</a>
+    <a href="#torse">Torse</a>
+    <a href="#dos">Dos</a>
+    <a href="#jambe-droite">Jambe Droite</a>
+    <a href="#jambe-gauche">Jambe Gauche</a>
+  </nav>
+
+  <header class="ns-hero">
+    <div class="ns-hero-inner">
+      <p>
+        Salon de tatouage à Los Santos. Une ambiance sombre, élégante et old school,
+        pour des pièces propres, lisibles et pensées pour durer.
+      </p>
+      <div class="ns-buttons">
+        <a class="ns-btn gold" href="#contact">Prendre rendez-vous</a>
+        <a class="ns-btn" href="#contact">Infos & contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="ns-section">
+    <div class="ns-about">
+      <div>
+        <img src="https://upload.storylife.fr/i/01KWKK8684DNN0MPC17JKDEF8V.png" alt="Logo No Saints Tattoo">
+      </div>
+
+      <div class="ns-about-text">
+        <div class="ns-title" style="text-align:left;margin-bottom:20px;">
+          <h2>Le salon</h2>
+          <span>Black · Gold · Tattoo</span>
+        </div>
+        <p>
+          No Saints Tattoo, c’est une direction artistique sombre, premium et assumée :
+          noir profond, doré vieilli, inspirations old school, gravure, lettrage et pièces de caractère.
+        </p>
+        <p>
+          Chaque projet est pensé pour coller à ton personnage, ton histoire et l’endroit où tu veux poser l’encre.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ns-cta" id="contact">
+    <h2>Prêt à passer sous l’aiguille ?</h2>
+    <p>
+      Explique ton idée, la zone souhaitée, le style recherché et les références que tu as en tête.
+      On transforme ça en projet propre.
+    </p>
+    <a class="ns-btn gold" href="mailto:contact@nosaints.tattoo">Contacter le salon</a>
+  </section>
+
+  <footer class="ns-footer">
+    NO SAINTS TATTOO — LOS SANTOS<br>
+    Black & Gold Tattoo Studio
+  </footer>
+
+</div>
