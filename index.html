@@ -203,6 +203,45 @@ body {
   font-size:17px;
 }
 
+/* ARTISTS */
+.ns-artists {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.ns-artists img {
+  width:100%;
+  max-width:430px;
+  margin:auto;
+  display:block;
+}
+
+.ns-artists-text p {
+  color:var(--muted);
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* Responsive */
+@media(max-width:850px) {
+
+  .ns-artists {
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .ns-artists .artist-image {
+    order:-1;
+  }
+
+  .ns-artists .ns-title{
+    text-align:center !important;
+  }
+
+}
+
 /* CTA */
 .ns-cta {
   text-align:center;
@@ -262,14 +301,14 @@ body {
 <div class="no-saints-page">
 
   <nav class="ns-nav">
-    <a href="https://will7ob.github.io/no-saints-tattoo/">Accueil</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/face.html">Visage / Cou / Nuque</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/leftarm">Bras Gauche</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/rightarm">Bras Droit</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/torso">Torse</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/back">Dos</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/rleg">Jambe Droite</a>
-    <a href="https://will7ob.github.io/no-saints-tattoo/lleg">Jambe Gauche</a>
+    <a href="https://nosaintstattoo.pro">Accueil</a>
+    <a href="https://nosaintstattoo.pro/face">Visage / Cou / Nuque</a>
+    <a href="https://nosaintstattoo.pro/leftarm">Bras Gauche</a>
+    <a href="https://nosaintstattoo.pro/rightarm">Bras Droit</a>
+    <a href="https://nosaintstattoo.pro/torso">Torse</a>
+    <a href="https://nosaintstattoo.pro/back">Dos</a>
+    <a href="https://nosaintstattoo.pro/rleg">Jambe Droite</a>
+    <a href="https://nosaintstattoo.pro/lleg">Jambe Gauche</a>
   </nav>
 
   <header class="ns-hero">
@@ -288,7 +327,7 @@ body {
   <section class="ns-section">
     <div class="ns-about">
       <div>
-        <img src="https://i.imgur.com/9tkdJap.png" alt="Logo No Saints Tattoo">
+        <img src="https://upload.storylife.fr/i/01KWY022SA2SXTY5T01Z8DFB00.png" alt="Logo No Saints Tattoo">
       </div>
 
       <div class="ns-about-text">
@@ -308,11 +347,41 @@ body {
     </div>
   </section>
 
+<section class="ns-section">
+
+  <div class="ns-artists">
+
+    <div class="ns-artists-text">
+
+      <div class="ns-title" style="text-align:left;margin-bottom:20px;">
+        <h2>Nos artistes</h2>
+        <span>WILLIAM - 602-6496 </span>
+      </div>
+
+      <p>
+        Chaque tatoueur possède son univers, sa sensibilité et son approche artistique.
+        Chez No Saints Tattoo, nous privilégions la qualité à la quantité afin que chaque projet bénéficie du temps et de l'attention qu'il mérite.
+      </p>
+
+      <p>
+        Que tu viennes avec une idée précise ou seulement une inspiration, nous t'accompagnons dans la création d'une pièce unique, pensée pour toi et réalisée avec exigence.
+      </p>
+
+    </div>
+
+    <div class="artist-image">
+      <img src="https://i.imgur.com/9tkdJap.png" alt="Tatoueur No Saints Tattoo">
+    </div>
+
+  </div>
+
+</section>
+
   <section class="ns-cta" id="contact">
     <h2>Prêt à passer sous l’aiguille ?</h2>
     <p>
-      Explique ton idée, la zone souhaitée, le style recherché et les références que tu as en tête.
-      On transforme ça en projet propre.
+      Explique nous par SMS ou DM sur notre page, ton idée, la zone souhaitée, le style recherché et les références que tu as en tête.
+      On transformera ça en projet propre.
     </p>
     <a class="ns-btn gold" href="https://lifeinvader.storylife.fr/page/no-saints-tattoo">Contacter le salon</a>
   </section>
