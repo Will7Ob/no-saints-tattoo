@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>No Saints Tattoo - Piercings</title>
+
+<style>
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100vh;
+  background:#050505;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+:root {
+  --bg:#050505;
+  --gold:#c9a45c;
+  --white:#f4f1ea;
+  --muted:#b8aa91;
+}
+
+.piercing-page {
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top, rgba(201,164,92,.12), transparent 35%),
+    linear-gradient(180deg, #050505 0%, #0b0906 100%);
+  color:var(--white);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.piercing-nav {
+  padding:18px 20px;
+  border-bottom:1px solid rgba(201,164,92,.45);
+  background:rgba(5,5,5,.95);
+}
+
+.piercing-nav a {
+  color:var(--white);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:13px;
+}
+
+.piercing-nav a:hover {
+  color:var(--gold);
+}
+
+.piercing-hero {
+  min-height:60vh;
+  padding:90px 20px 70px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.85)),
+    url("https://upload.storylife.fr/i/01KWKK6G9DMX76J161HTS8RVPY.png") center/cover no-repeat;
+}
+
+.piercing-hero-inner {
+  max-width:850px;
+}
+
+.piercing-hero h1 {
+  margin:0;
+  font-size:clamp(42px, 8vw, 90px);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  text-shadow:0 4px 0 #000;
+}
+
+.piercing-hero span {
+  display:block;
+  margin-top:12px;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:13px;
+}
+
+.piercing-hero p {
+  max-width:680px;
+  margin:26px auto 0;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:18px;
+}
+
+.piercing-section {
+  max-width:1180px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.section-title {
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2 {
+  margin:0;
+  font-size:clamp(30px, 5vw, 52px);
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.section-title span {
+  display:block;
+  margin-top:12px;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.gender-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.gender-card {
+  min-height:360px;
+  padding:34px;
+  border:1px solid rgba(201,164,92,.45);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  box-shadow:0 10px 35px rgba(0,0,0,.4);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  overflow:hidden;
+}
+
+.gender-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(201,164,92,.18), transparent 35%);
+  pointer-events:none;
+}
+
+.gender-card h3 {
+  margin:0 0 14px;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:30px;
+  position:relative;
+}
+
+.gender-card p {
+  color:var(--muted);
+  line-height:1.7;
+  margin:0 0 22px;
+  position:relative;
+}
+
+.gender-card a {
+  position:relative;
+  width:max-content;
+  padding:12px 18px;
+  border:1px solid var(--gold);
+  color:var(--white);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:13px;
+}
+
+.gender-card a:hover {
+  background:var(--gold);
+  color:#050505;
+}
+
+.catalogue-title {
+  margin-top:80px;
+}
+
+.piercing-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+
+.piercing-card {
+  border:1px solid rgba(201,164,92,.35);
+  background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.piercing-card img {
+  width:100%;
+  aspect-ratio:1 / 1.1;
+  object-fit:cover;
+  display:block;
+  background:#111;
+}
+
+.piercing-content {
+  padding:22px;
+}
+
+.piercing-content small {
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.piercing-content h3 {
+  margin:8px 0 10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:18px;
+}
+
+.piercing-content p {
+  color:var(--muted);
+  line-height:1.6;
+  font-size:15px;
+  margin:0 0 18px;
+}
+
+.price {
+  display:inline-block;
+  border:1px solid var(--gold);
+  padding:9px 14px;
+  font-weight:bold;
+  letter-spacing:1px;
+  background:rgba(0,0,0,.35);
+}
+
+.piercing-note {
+  max-width:850px;
+  margin:60px auto 0;
+  padding:28px;
+  border:1px solid rgba(201,164,92,.35);
+  color:var(--muted);
+  line-height:1.7;
+  text-align:center;
+  background:rgba(0,0,0,.28);
+}
+
+.footer {
+  padding:35px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  background:#030303;
+}
+
+@media(max-width:900px) {
+  .gender-grid,
+  .piercing-grid {
+    grid-template-columns:1fr;
+  }
+
+  .piercing-hero {
+    min-height:50vh;
+    padding:70px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="piercing-page">
+
+  <div class="piercing-nav">
+    <a href="https://nosaintstattoo.pro">← Retour au salon</a>
+  </div>
+
+  <header class="piercing-hero">
+    <div class="piercing-hero-inner">
+      <h1>Piercings</h1>
+      <span>No Saints Jewelry Selection</span>
+      <p>
+        Une sélection de piercings homme et femme pensée pour choisir le bijou qui vous convient.
+        Ici, chaque détail se choisit, se porte et s’assume.
+      </p>
+    </div>
+  </header>
+
+  <section class="piercing-section">
+
+    <div class="section-title">
+      <h2>Collections</h2>
+      <span>Homme · Femme · Attitude</span>
+    </div>
+
+    <div class="gender-grid">
+
+      <div class="gender-card">
+        <h3>Homme</h3>
+        <p>
+          Anneaux sobres, studs noirs, arcade, oreille, septum ou labret.
+          Des pièces discrètes ou plus marquées, selon le style recherché.
+        </p>
+        <a href="#homme">Voir homme</a>
+      </div>
+
+      <div class="gender-card">
+        <h3>Femme</h3>
+        <p>
+          Sélection fine, élégante ou plus affirmée : narine, oreille, septum,
+          nombril et bijoux visibles avec caractère.
+        </p>
+        <a href="#femme">Voir femme</a>
+      </div>
+
+    </div>
+
+    <div class="section-title catalogue-title" id="homme">
+      <h2>Homme</h2>
+      <span>Clean · Dark · Premium</span>
+    </div>
+
+    <div class="piercing-grid">
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_HOMME_1" alt="Piercing homme">
+        <div class="piercing-content">
+          <small>Oreille</small>
+          <h3>Black Stud</h3>
+          <p>Stud noir discret, idéal pour un style sobre et propre.</p>
+          <span class="price">120$</span>
+        </div>
+      </article>
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_HOMME_2" alt="Piercing homme">
+        <div class="piercing-content">
+          <small>Septum</small>
+          <h3>Steel Ring</h3>
+          <p>Anneau acier simple, brut et efficace.</p>
+          <span class="price">150$</span>
+        </div>
+      </article>
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_HOMME_3" alt="Piercing homme">
+        <div class="piercing-content">
+          <small>Arcade</small>
+          <h3>Dark Barbell</h3>
+          <p>Barbell noir pour un rendu plus marqué.</p>
+          <span class="price">130$</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="section-title catalogue-title" id="femme">
+      <h2>Femme</h2>
+      <span>Fine · Gold · Sharp</span>
+    </div>
+
+    <div class="piercing-grid">
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_FEMME_1" alt="Piercing femme">
+        <div class="piercing-content">
+          <small>Narine</small>
+          <h3>Gold Nose Stud</h3>
+          <p>Bijou fin doré, élégant sans être trop sage.</p>
+          <span class="price">120$</span>
+        </div>
+      </article>
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_FEMME_2" alt="Piercing femme">
+        <div class="piercing-content">
+          <small>Nombril</small>
+          <h3>Gold Navel</h3>
+          <p>Bijou de nombril doré, propre et lumineux.</p>
+          <span class="price">180$</span>
+        </div>
+      </article>
+
+      <article class="piercing-card">
+        <img src="URL_IMAGE_FEMME_3" alt="Piercing femme">
+        <div class="piercing-content">
+          <small>Septum</small>
+          <h3>Fine Septum Ring</h3>
+          <p>Anneau fin pour une touche assumée mais élégante.</p>
+          <span class="price">150$</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="piercing-note">
+      Les prix peuvent varier selon le bijou choisi, la zone et la disponibilité en salon.
+      Chaque piercing est séléctionné afin de vous garantir un acte réalisé en toute sécurité.
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    NO SAINTS TATTOO — PIERCING SELECTION<br>
+    -EST-2026- ©️William Obrien
+  </footer>
+
+</div>
+
+</body>
+</html>
