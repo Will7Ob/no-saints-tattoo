@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Saints Tattoo — Los Santos</title>
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+/* ---------- HERO ---------- */
+.ns-hero{
+  min-height:88vh; padding:6rem 1.5rem 4rem; text-align:center;
+  display:flex; align-items:center; justify-content:center; position:relative;
+  background:
+    linear-gradient(rgba(6,5,4,.5), rgba(6,5,4,.92)),
+    url("https://upload.storylife.fr/i/01KWKK6G9DMX76J161HTS8RVPY.png") center/cover no-repeat;
+}
+.ns-hero-inner{ max-width:820px; position:relative; z-index:2; }
+.ns-hero .eyebrow{
+  font-family: var(--f-mono); color: var(--gold); letter-spacing:.3em; font-size:.72rem;
+  text-transform:uppercase; display:block; margin-bottom:1.4rem;
+}
+.ns-wordmark{
+  font-family: var(--f-display); font-size: clamp(2.6rem, 8vw, 5rem);
+  color: var(--ivory); text-shadow: 0 4px 0 rgba(0,0,0,.6);
+  line-height:1.05;
+}
+.ns-wordmark .no{ color: var(--gold); }
+.ns-hero .motto{
+  margin-top:1rem; font-family: var(--f-head); letter-spacing:.25em; font-size:.85rem;
+  color: var(--muted); text-transform:uppercase;
+}
+.ns-hero p.lead{
+  max-width:620px; margin:1.8rem auto 0; color: var(--muted);
+  font-size:clamp(1rem,2vw,1.15rem); line-height:1.7;
+}
+.ns-hero-actions{ margin-top:2.4rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* ---------- BODY MAP (signature) ---------- */
+.bodymap-section{ padding: 6rem 1.5rem; max-width:1180px; margin:0 auto; }
+.ns-title{ text-align:center; margin-bottom:1rem; }
+.ns-title h2{ font-size:clamp(1.8rem,4vw,2.6rem); color: var(--ivory); }
+.ns-title span{
+  display:block; margin-top:.7rem; color: var(--gold); font-family: var(--f-mono);
+  text-transform:uppercase; letter-spacing:.2em; font-size:.7rem;
+}
+.bodymap-sub{
+  text-align:center; max-width:560px; margin:1.1rem auto 0; color: var(--muted); font-size:.95rem;
+}
+
+.bodymap-toggle{
+  display:flex; justify-content:center; gap:.6rem; margin: 2.2rem 0 2.6rem;
+}
+.bodymap-toggle button{
+  font-family: var(--f-mono); font-size:.75rem; text-transform:uppercase; letter-spacing:.1em;
+  padding:.6rem 1.2rem; background:transparent; border:1px solid var(--gold-deep);
+  color: var(--muted); cursor:pointer; transition: all .25s ease;
+}
+.bodymap-toggle button.active{ background: var(--gold); color: var(--ink); border-color: var(--gold); font-weight:700; }
+
+.bodymap-wrap{
+  display:grid; grid-template-columns: minmax(0,340px) 1fr; gap: 2.8rem; align-items:center;
+}
+.bodymap-figure{ position:relative; margin:0 auto; }
+.bodymap-figure svg{ width:100%; max-width:320px; height:auto; display:block; margin:0 auto; }
+.bm-zone{ cursor:pointer; transition: fill .25s ease, opacity .25s ease; }
+.bm-zone{ fill: rgba(201,164,92,.14); stroke: rgba(201,164,92,.55); stroke-width:1.5; }
+.bm-zone:hover, .bm-zone.hovered{ fill: rgba(201,164,92,.55); }
+.bm-outline{ fill:none; stroke: var(--muted); stroke-width:1.2; opacity:.5; }
+
+.bodymap-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:.9rem; }
+.bm-link{
+  display:flex; align-items:center; justify-content:space-between; gap:.8rem;
+  padding: 1rem 1.2rem; border:1px solid rgba(201,164,92,.3);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  transition: all .25s ease;
+}
+.bm-link:hover, .bm-link.hovered{
+  border-color: var(--gold); background: rgba(201,164,92,.1); transform: translateX(4px);
+}
+.bm-link .no{ font-family: var(--f-mono); color: var(--gold); font-size:.72rem; }
+.bm-link .name{ font-family: var(--f-head); letter-spacing:1px; text-transform:uppercase; font-size:.92rem; }
+.bm-link .arrow{ color: var(--gold); font-size:1.1rem; }
+
+@media(max-width:850px){
+  .bodymap-wrap{ grid-template-columns:1fr; }
+  .bodymap-list{ grid-template-columns:1fr; }
+}
+
+/* ---------- ABOUT / ARTISTS ---------- */
+.ns-section{ padding:5rem 1.5rem; max-width:1180px; margin:0 auto; }
+.ns-split{
+  display:grid; grid-template-columns:1fr 1fr; gap: 3rem; align-items:center;
+}
+.ns-split img{ width:100%; max-width:420px; margin:0 auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,.5)); }
+.ns-split-text .ns-title{ text-align:left; margin-bottom:1.4rem; }
+.ns-split-text p{ color: var(--muted); line-height:1.85; font-size:1.02rem; margin-bottom:1rem; }
+.ns-split-text p:last-child{ margin-bottom:0; }
+@media(max-width:850px){
+  .ns-split{ grid-template-columns:1fr; text-align:center; }
+  .ns-split-text .ns-title{ text-align:center; }
+  .ns-split.reverse .ns-split-img{ order:-1; }
+}
+
+/* ---------- CTA ---------- */
+.ns-cta{
+  text-align:center; padding:6rem 1.5rem;
+  background: linear-gradient(rgba(6,5,4,.9), rgba(6,5,4,.9)),
+    url("https://upload.storylife.fr/i/01KWKK6G9DMX76J161HTS8RVPY.png") center/cover no-repeat;
+  border-top:1px solid rgba(201,164,92,.35); border-bottom:1px solid rgba(201,164,92,.35);
+}
+.ns-cta h2{ font-size:clamp(2rem,5vw,3.4rem); color: var(--ivory); }
+.ns-cta p{ color: var(--muted); max-width:600px; margin:1.2rem auto 2rem; line-height:1.7; }
+</style>
+</head>
+<body>
+
+<div class="ns-page">
+
+  <nav class="ns-nav">
+    <div class="ns-nav-inner">
+      <a href="index.html" class="ns-nav-brand"><span class="dot">†</span> No Saints Tattoo</a>
+      <div class="ns-nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="face.html">Visage / Cou / Nuque</a>
+        <a href="leftarm.html">Bras Gauche</a>
+        <a href="rightarm.html">Bras Droit</a>
+        <a href="torso.html">Torse</a>
+        <a href="back.html">Dos</a>
+        <a href="rleg.html">Jambe Droite</a>
+        <a href="lleg.html">Jambe Gauche</a>
+        <a href="piercings.html">Piercings</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="ns-hero">
+    <div class="ns-hero-inner">
+      <span class="eyebrow">Los Santos · Salon de tatouage</span>
+      <h1 class="ns-wordmark"><span class="no">No</span> Saints</h1>
+      <p class="motto">Tes démons · Ton histoire · Notre art</p>
+      <p class="lead">
+        Salon de tatouage à Los Santos. Une ambiance sombre, élégante et old school,
+        pour des pièces propres, lisibles et pensées pour durer.
+      </p>
+      <div class="ns-hero-actions">
+        <a class="btn gold" href="#contact"><span>Prendre rendez-vous</span></a>
+        <a class="btn" href="#carte"><span>Explorer le catalogue</span></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="bodymap-section" id="carte">
+    <div class="ns-title reveal">
+      <h2>Le corps comme dossier</h2>
+      <span>Choisis une zone pour voir le catalogue</span>
+    </div>
+    <p class="bodymap-sub reveal">Chaque zone du corps a ses propres pièces disponibles. Survole ou touche une zone, sur le schéma ou dans la liste.</p>
+
+    <div class="bodymap-toggle reveal">
+      <button type="button" class="active" data-view="front">Vue de face</button>
+      <button type="button" data-view="back">Vue de dos</button>
+    </div>
+
+    <div class="bodymap-wrap reveal">
+      <div class="bodymap-figure">
+        <!-- FRONT VIEW -->
+        <svg id="bm-front" viewBox="0 0 220 460" xmlns="http://www.w3.org/2000/svg">
+          <path class="bm-outline" d="M110 12c14 0 24 11 24 26 0 12-6 20-12 24 22 6 34 20 38 44l8 90-16 2-6 70h-72l-6-70-16-2 8-90c4-24 16-38 38-44-6-4-12-12-12-24 0-15 10-26 24-26z"/>
+          <!-- face/head -->
+          <circle class="bm-zone" data-zone="face" cx="110" cy="38" r="26"/>
+          <!-- right arm (viewer's left) -->
+          <rect class="bm-zone" data-zone="rightarm" x="52" y="108" width="26" height="140" rx="10"/>
+          <!-- left arm (viewer's right) -->
+          <rect class="bm-zone" data-zone="leftarm" x="142" y="108" width="26" height="140" rx="10"/>
+          <!-- torso -->
+          <rect class="bm-zone" data-zone="torso" x="80" y="100" width="60" height="120" rx="8"/>
+          <!-- right leg -->
+          <rect class="bm-zone" data-zone="rleg" x="82" y="228" width="26" height="150" rx="10"/>
+          <!-- left leg -->
+          <rect class="bm-zone" data-zone="lleg" x="112" y="228" width="26" height="150" rx="10"/>
+        </svg>
+        <!-- BACK VIEW -->
+        <svg id="bm-back" viewBox="0 0 220 460" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+          <path class="bm-outline" d="M110 12c14 0 24 11 24 26 0 12-6 20-12 24 22 6 34 20 38 44l8 90-16 2-6 70h-72l-6-70-16-2 8-90c4-24 16-38 38-44-6-4-12-12-12-24 0-15 10-26 24-26z"/>
+          <circle class="bm-outline" cx="110" cy="38" r="26" style="opacity:.3"/>
+          <rect class="bm-zone" data-zone="leftarm" x="52" y="108" width="26" height="140" rx="10"/>
+          <rect class="bm-zone" data-zone="rightarm" x="142" y="108" width="26" height="140" rx="10"/>
+          <rect class="bm-zone" data-zone="back" x="80" y="100" width="60" height="120" rx="8"/>
+          <rect class="bm-zone" data-zone="rleg" x="82" y="228" width="26" height="150" rx="10"/>
+          <rect class="bm-zone" data-zone="lleg" x="112" y="228" width="26" height="150" rx="10"/>
+        </svg>
+      </div>
+
+      <div class="bodymap-list">
+        <a class="bm-link" data-zone="face" href="face.html"><span><span class="no">N°01</span><br><span class="name">Visage / Cou / Nuque</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="torso" href="torso.html"><span><span class="no">N°02</span><br><span class="name">Torse</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="back" href="back.html"><span><span class="no">N°03</span><br><span class="name">Dos</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="leftarm" href="leftarm.html"><span><span class="no">N°04</span><br><span class="name">Bras Gauche</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="rightarm" href="rightarm.html"><span><span class="no">N°05</span><br><span class="name">Bras Droit</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="rleg" href="rleg.html"><span><span class="no">N°06</span><br><span class="name">Jambe Droite</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" data-zone="lleg" href="lleg.html"><span><span class="no">N°07</span><br><span class="name">Jambe Gauche</span></span><span class="arrow">→</span></a>
+        <a class="bm-link" href="piercings.html"><span><span class="no">N°08</span><br><span class="name">Piercings</span></span><span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ns-section">
+    <div class="ns-split reveal">
+      <div>
+        <img src="https://upload.storylife.fr/i/01KWY022SA2SXTY5T01Z8DFB00.png" alt="Logo No Saints Tattoo">
+      </div>
+      <div class="ns-split-text">
+        <div class="ns-title">
+          <h2>Le salon</h2>
+          <span>Tes démons · Ton Histoire · Notre Art</span>
+        </div>
+        <p>
+          No Saints Tattoo est né d'une conviction : un tatouage n'a de valeur que s'il raconte quelque chose.
+          Derrière chaque projet, il y a une personne, un souvenir, une passion, une victoire, une chute ou un démon que l'on choisit d'assumer.
+          Notre rôle n'est pas de remplir une peau. Il est de transformer cette histoire en une œuvre qui t'accompagnera toute une vie.
+        </p>
+        <p>
+          Chaque projet est pensé pour coller à ton personnage, ton histoire et l'endroit où tu veux poser l'encre.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ns-section">
+    <div class="ns-split reverse reveal">
+      <div class="ns-split-text">
+        <div class="ns-title">
+          <h2>Nos artistes</h2>
+          <span>William — 602-6496</span>
+        </div>
+        <p>
+          Chaque tatoueur possède son univers, sa sensibilité et son approche artistique.
+          Chez No Saints Tattoo, nous privilégions la qualité à la quantité afin que chaque projet bénéficie du temps et de l'attention qu'il mérite.
+        </p>
+        <p>
+          Que tu viennes avec une idée précise ou seulement une inspiration, nous t'accompagnons dans la création d'une pièce unique, pensée pour toi et réalisée avec exigence.
+        </p>
+      </div>
+      <div class="ns-split-img">
+        <img src="https://i.imgur.com/9tkdJap.png" alt="Tatoueur No Saints Tattoo">
+      </div>
+    </div>
+  </section>
+
+  <section class="ns-cta" id="contact">
+    <h2 class="reveal">Prêt à passer sous l'aiguille ?</h2>
+    <p class="reveal">
+      Explique nous par SMS ou DM sur notre page, ton idée, la zone souhaitée, le style recherché et les références que tu as en tête.
+      On transformera ça en projet propre.
+    </p>
+    <a class="btn gold reveal" href="https://lifeinvader.storylife.fr/page/no-saints-tattoo"><span>Contacter le salon</span></a>
+  </section>
+
+  <footer class="ns-footer">
+    <strong>NO SAINTS TATTOO</strong> — LOS SANTOS<br>
+    -EST-2026- ©️ William O'Brien
+  </footer>
+
+</div>
+
+<script src="assets/shared.js"></script>
+<script>
+// ---------- BODY MAP INTERACTIVITY ----------
+const toggleBtns = document.querySelectorAll('.bodymap-toggle button');
+const frontSvg = document.getElementById('bm-front');
+const backSvg = document.getElementById('bm-back');
+
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const view = btn.dataset.view;
+    frontSvg.style.display = view === 'front' ? 'block' : 'none';
+    backSvg.style.display = view === 'back' ? 'block' : 'none';
+  });
+});
+
+const zones = document.querySelectorAll('.bm-zone');
+const links = document.querySelectorAll('.bm-link');
+
+zones.forEach(zone => {
+  const key = zone.dataset.zone;
+  zone.addEventListener('mouseenter', () => {
+    links.forEach(l => { if (l.dataset.zone === key) l.classList.add('hovered'); });
+  });
+  zone.addEventListener('mouseleave', () => {
+    links.forEach(l => l.classList.remove('hovered'));
+  });
+  zone.addEventListener('click', () => {
+    const link = document.querySelector(`.bm-link[data-zone="${key}"]`);
+    if (link) window.location.href = link.getAttribute('href');
+  });
+});
+
+links.forEach(link => {
+  const key = link.dataset.zone;
+  if (!key) return;
+  link.addEventListener('mouseenter', () => {
+    document.querySelectorAll(`.bm-zone[data-zone="${key}"]`).forEach(z => z.classList.add('hovered'));
+  });
+  link.addEventListener('mouseleave', () => {
+    document.querySelectorAll(`.bm-zone[data-zone="${key}"]`).forEach(z => z.classList.remove('hovered'));
+  });
+});
+</script>
+</body>
+</html>
