@@ -1,0 +1,190 @@
+/* =========================================================
+   NO SAINTS TATTOO — DESIGN SYSTEM PARTAGÉ
+   Los Santos · dossier / rap-sheet aesthetic
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Oswald:wght@400;500;600;700&family=Karla:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --ink:      #0a0806;
+  --ink-2:    #120e0a;
+  --ink-3:    #191309;
+  --gold:     #c9a45c;
+  --gold-deep:#7c5a24;
+  --blood:    #5c1f1f;
+  --paper:    #e9ddc3;
+  --ivory:    #f4f1ea;
+  --muted:    #b0a084;
+
+  --f-display: 'Pirata One', serif;
+  --f-head:    'Oswald', sans-serif;
+  --f-body:    'Karla', sans-serif;
+  --f-mono:    'Space Mono', monospace;
+
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--f-body);
+  line-height:1.6;
+}
+h1,h2,h3{ margin:0; font-family: var(--f-head); text-transform:uppercase; letter-spacing:1.5px; font-weight:600; }
+p{ margin:0; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+::selection{ background: var(--gold); color: var(--ink); }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+.ns-page{
+  background:
+    radial-gradient(circle at top, rgba(201,164,92,.10), transparent 38%),
+    linear-gradient(180deg, var(--ink) 0%, #0d0a06 100%);
+  min-height:100vh;
+}
+
+/* ---------- NAV ---------- */
+.ns-nav{
+  position:sticky; top:0; z-index:100;
+  background:rgba(9,7,5,.92);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(201,164,92,.4);
+  box-shadow:0 8px 26px rgba(0,0,0,.5);
+}
+.ns-nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  max-width:1280px; margin:0 auto; padding:0 1.2rem;
+}
+.ns-nav-brand{
+  display:flex; align-items:center; gap:.5rem;
+  font-family: var(--f-display); font-size:1.25rem; color: var(--gold);
+  padding:.9rem 0; white-space:nowrap;
+}
+.ns-nav-brand .dot{ color: var(--blood); }
+
+.ns-nav-links{
+  display:flex; overflow-x:auto; scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.ns-nav-links::-webkit-scrollbar{ display:none; }
+.ns-nav-links a{
+  display:inline-block; padding:1rem .95rem;
+  font-family: var(--f-mono); font-size:.72rem; letter-spacing:.05em;
+  text-transform:uppercase; color: var(--ivory);
+  border-left:1px solid rgba(201,164,92,.15);
+  white-space:nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.ns-nav-links a:hover, .ns-nav-links a.active{
+  background: var(--gold); color: var(--ink);
+}
+.ns-nav-toggle{ display:none; }
+
+/* ---------- HERO (zone pages) ---------- */
+.zone-hero{
+  padding: 4.6rem 1.5rem 2.8rem; text-align:center; position:relative;
+}
+.zone-hero .case-no{
+  font-family: var(--f-mono); font-size:.75rem; color: var(--gold);
+  letter-spacing:.15em; text-transform:uppercase; display:block; margin-bottom:1rem;
+}
+.zone-hero h1{
+  font-size: clamp(2.4rem, 7vw, 4.6rem); color: var(--ivory);
+  text-shadow: 0 3px 0 rgba(0,0,0,.6);
+}
+.zone-hero p{
+  max-width:640px; margin:1.3rem auto 0; color: var(--muted);
+  font-size:1.02rem; line-height:1.75;
+}
+.zone-hero .rule{
+  width:70px; height:2px; background: var(--gold); margin: 1.6rem auto 0; opacity:.6;
+}
+
+/* ---------- GALLERY / DOSSIER CARDS ---------- */
+.gallery{
+  max-width:1280px; margin:0 auto; padding: .5rem 1.4rem 5rem;
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;
+}
+.tattoo-card{
+  position:relative; background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+  border:1px solid rgba(201,164,92,.3);
+  box-shadow:0 10px 26px rgba(0,0,0,.4);
+  overflow:hidden; border-radius:2px;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+}
+.tattoo-card:hover{
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0,0,0,.55);
+}
+.tattoo-card .tag{
+  position:absolute; top:0; left:0; z-index:2;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-mono); font-size:.62rem; letter-spacing:.06em;
+  padding:.3rem .55rem; text-transform:uppercase;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+}
+.tattoo-card .imgwrap{ position:relative; overflow:hidden; background:#111; }
+.tattoo-card img{
+  width:100%; aspect-ratio:1/1.05; object-fit:cover;
+  filter: saturate(.92) contrast(1.05);
+  transition: transform .5s var(--ease), filter .5s ease;
+}
+.tattoo-card:hover img{ transform: scale(1.06); filter:saturate(1.05) contrast(1.08); }
+.tattoo-content{ padding:1.2rem 1.3rem 1.4rem; }
+.tattoo-content h3{
+  font-size:1.02rem; color: var(--ivory); margin-bottom:.55rem; letter-spacing:.5px;
+}
+.tattoo-content .desc{
+  color: var(--muted); font-size:.88rem; line-height:1.55; margin-bottom:.9rem; min-height:0;
+}
+.price{
+  display:inline-flex; align-items:center; gap:.35rem;
+  font-family: var(--f-mono); font-weight:700; font-size:.85rem;
+  border:1px solid var(--gold); color: var(--ivory);
+  padding:.5rem .85rem; background: rgba(0,0,0,.35);
+}
+.price::before{ content:'$'; color: var(--gold); }
+
+/* ---------- FOOTER ---------- */
+.ns-footer{
+  padding: 2.6rem 1.5rem; text-align:center; color: var(--muted);
+  font-size:.82rem; background:#040302; border-top:1px solid rgba(201,164,92,.2);
+  font-family: var(--f-mono); letter-spacing:.03em;
+}
+.ns-footer strong{ color: var(--gold); font-family: var(--f-head); letter-spacing:1px; }
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  padding:.9rem 1.7rem; border:1px solid var(--gold); color: var(--ivory);
+  font-family: var(--f-mono); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em;
+  background:rgba(0,0,0,.4); cursor:pointer; transition: all .25s var(--ease);
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(201,164,92,.25); }
+.btn.gold{ background: var(--gold); color: var(--ink); font-weight:700; }
+.btn.gold:hover{ background:#dbb877; }
+
+/* ---------- REVEAL ---------- */
+.reveal{ opacity:0; transform:translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:640px){
+  .gallery{ grid-template-columns:1fr; padding-bottom:3.5rem; }
+  .ns-nav-links a{ font-size:.68rem; padding:.85rem .7rem; }
+  .zone-hero{ padding:3.4rem 1.2rem 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001s !important; transition-duration:.001s !important; }
+  .reveal{ opacity:1; transform:none; }
+}
